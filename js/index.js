@@ -3,7 +3,9 @@ window.onload = () => {
 
     const input = document.querySelector('#country-input');
     input.addEventListener('input', searchCountry);
+
 }
+
 var covidData;
 var map;
 var markers = [];
@@ -20,13 +22,20 @@ async function initMap() {
     var myLatLng = { lat: 16.061941, lng: 108.219614 };
     var vietnamIndex = covidData.findIndex(one => one['country'] == 'Vietnam');
     // let vietnam = covidData[vietnamIndex]['country']['countryInfo'];
-    let vietnam = {lat: 16, lng: 106}
+    let vietnam = { lat: 16, lng: 106 }
     map = new google.maps.Map(document.getElementById('map'), {
         center: vietnam,
         zoom: 5,
         mapTypeId: 'roadmap',
         styles: customGoogleMapstyles,
     });
+
+    google.maps.event.addListenerOnce(map, 'tilesloaded', function () {
+        // do something only the first time the map is loaded
+        document.querySelector(".loader-container").remove();
+
+    });
+    
     infoWindow = new google.maps.InfoWindow();
 
     // var marker = new google.maps.Marker({
@@ -78,7 +87,7 @@ function showCovidMarkers(newCovidData) {
         let deaths = one['deaths']
         let recovered = one['recovered']
         let id = one['countryInfo']['_id']
-        let iso2 = one['countryInfo']['iso2'] 
+        let iso2 = one['countryInfo']['iso2']
         // bounds.extend(latlng);
         createCovidMarker(latlng, lastUpdated, country, cases, deaths, recovered, id, iso2)
     })
@@ -109,7 +118,7 @@ function createCovidMarker(latlng, lastUpdated, country, cases, deaths, recovere
     var marker = new google.maps.Marker({
         map: map,
         position: latlng,
-        label: iso2+"",
+        label: iso2 + "",
         icon: 'image/corona.png',
         abc: 'ahihi'
     });
@@ -132,23 +141,23 @@ function clickStore(index) {
 
 function searchCountry() {
     let text = document.getElementById("country-input").value;
-    console.log('text: '   + text )
+    console.log('text: ' + text)
     console.log('search');
     // console.log(covidData)
     let oldIndex = []
-    let countriesResult = covidData.filter((one,index) => {
+    let countriesResult = covidData.filter((one, index) => {
         if (one['country'].toLowerCase().includes(text.toLowerCase())) {
             oldIndex.push(index);
             return true;
         }
     })
-    countriesResult.map((one,index) => {
+    countriesResult.map((one, index) => {
         one['index'] = oldIndex[index];
     })
-    console.log(countriesResult); 
+    console.log(countriesResult);
     displayCcpVirusCountries(countriesResult)
     // showCovidMarkers(countriesResult)
-    
+
 }
 
 function playSong() {
