@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCP VIRUS MAP RECORDS</title>
+    <script src="js/store-data.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/google-map-style.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body onclick="playSong()">
+    <audio controls webkit-playsinline="true" loop id="my_song">
+        <source src="sound/falundafaisgood.mp3 " type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="title">CCP VIRUS MAP RECORDS</div>
+
+    <div class="search-container">
+        <div class="search">
+            <input type="text" name="" id="country-input" placeholder="Enter Country" onchange="searchCountry()" />
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+
+    <div class="stores-list-container">
+        <div class="stores-list">
+            <div class="store-container">
+                <div class="store-info-container">
+                    <div class="store-address">
+                        <span> 7438 South Ave.</span>
+                        <span>Norman, OK 73072</span>
+                    </div>
+                    <div class="store-phone-number">
+                        (950) 715-9938
+                    </div>
+                </div>
+                <div class="store-number-container">
+                    <div class="store-number">
+                        1
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="misscellaneous">
+        <div class="donate">
+            <div class="patreon" onclick="window.open('https://www.patreon.com/bePatron?u=25865141')">
+                <img src="image/patreon.png" alt="" srcset="">
+                <a>Donate only 1$ to Thong to Make Better Products</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="map"></div>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLEW4S3JwYwrXkqQPc26o76hb7cRbO0Hs&callback=initMap">
+        </script>
+</body>
+
+</html>
