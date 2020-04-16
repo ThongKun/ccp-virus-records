@@ -1,10 +1,19 @@
+HTMLElement.prototype.stopScroll = function(){
+    this.scroll({top:this.scrollTop+1});
+}
+
 window.onload = () => {
     var context = new AudioContext();
 
-    document.querySelector('.countrys-list-container').style.display="none";
+    document.querySelector('.countrys-list-container').style.display = "none";
     const input = document.querySelector('#country-input');
     input.addEventListener('input', searchCountry);
+ 
+    document.getElementByTagName('body')[0].stopScroll();
+}
 
+function noScroll() {
+    window.scrollTo(0, 0);
 }
 
 var covidData;
@@ -33,7 +42,7 @@ async function initMap() {
         zoomControl: false,
         mapTypeControl: false,
         fullscreenControl: false,
-        gestureHandling : 'greedy'
+        gestureHandling: 'greedy'
     });
 
     google.maps.event.addListenerOnce(map, 'tilesloaded', function () {
@@ -41,7 +50,7 @@ async function initMap() {
         document.querySelector(".loader-container").remove();
 
     });
-    
+
     infoWindow = new google.maps.InfoWindow();
 
     // var marker = new google.maps.Marker({
@@ -135,7 +144,7 @@ function createCovidMarker(latlng, lastUpdated, country, cases, deaths, recovere
 
 function clickcountry(index) {
     document.getElementById("country-input").value = "";
-    document.querySelector('.countrys-list-container').style.display="none";
+    document.querySelector('.countrys-list-container').style.display = "none";
     clickSound.play();
     var key = index.toString();
     let selectedMarker = markers.find(one => one.label.toLowerCase() === index.toLowerCase())
@@ -147,11 +156,11 @@ function clickcountry(index) {
 function searchCountry() {
     let text = document.getElementById("country-input").value;
     if (text) {
-        document.querySelector('.countrys-list-container').style.display="flex";
+        document.querySelector('.countrys-list-container').style.display = "flex";
     } else {
-        document.querySelector('.countrys-list-container').style.display="none";
+        document.querySelector('.countrys-list-container').style.display = "none";
     }
-    
+
     // console.log(covidData)
     let oldIndex = []
     let countriesResult = covidData.filter((one, index) => {
