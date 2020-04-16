@@ -1,8 +1,7 @@
 window.onload = () => {
     var context = new AudioContext();
 
-    document.querySelector('.stores-list-container').style.display="none";
-    document.querySelector('.stores-list-container').style.webkitDisplay="none";
+    document.querySelector('.countrys-list-container').style.display="none";
     const input = document.querySelector('#country-input');
     input.addEventListener('input', searchCountry);
 
@@ -47,36 +46,33 @@ async function initMap() {
     //     map: map,
     //     title: 'Hello World!'
     // });
-    // showStoresMarkers();
+    // showcountrysMarkers();
     showCovidMarkers(covidData)
 
 }
 
 function displayCcpVirusCountries(countries) {
-    let storesHtml = '';
+    let countrysHtml = '';
     countries.map((one, index) => {
-        // let address = store['addressLines'];
-        // let phone = store['phoneNumber'];
-        storesHtml += `
-            <div id=${one['countryInfo']['_id']} class="store-container" onclick="clickStore('${one['countryInfo']['iso2']}')">
-                <div class="store-info-container">
-                    <div class="store-address">
+        countrysHtml += `
+            <div id=${one['countryInfo']['_id']} class="country-container" onclick="clickcountry('${one['countryInfo']['iso2']}')">
+                <div class="country-info-container">
+                    <div class="country-name">
                         <span>${one['country']}</span>
                         <span></span>
                     </div>
-                    <div class="store-phone-number">
-                        
+                    <div class="boundary">
                     </div>
                 </div>
-                <div class="store-number-container">
-                    <div class="store-number">
+                <div class="country-number-container">
+                    <div class="country-number">
                     <img src="${one['countryInfo']['flag']}" width="20px" height="20px"/>
                     </div>
                 </div>
             </div>
         `
     })
-    document.querySelector('.stores-list').innerHTML = storesHtml;
+    document.querySelector('.countrys-list').innerHTML = countrysHtml;
 }
 
 function showCovidMarkers(newCovidData) {
@@ -134,9 +130,9 @@ function createCovidMarker(latlng, lastUpdated, country, cases, deaths, recovere
     markers.push(marker);
 }
 
-function clickStore(index) {
+function clickcountry(index) {
     document.getElementById("country-input").value = "";
-    document.querySelector('.stores-list-container').style.display="none";
+    document.querySelector('.countrys-list-container').style.display="none";
     clickSound.play();
     var key = index.toString();
     let selectedMarker = markers.find(one => one.label.toLowerCase() === index.toLowerCase())
@@ -148,12 +144,11 @@ function clickStore(index) {
 function searchCountry() {
     let text = document.getElementById("country-input").value;
     if (text) {
-        document.querySelector('.stores-list-container').style.display="flex";
+        document.querySelector('.countrys-list-container').style.display="flex";
     } else {
-        document.querySelector('.stores-list-container').style.display="none";
+        document.querySelector('.countrys-list-container').style.display="none";
     }
-    console.log('text: ' + text)
-    console.log('search');
+    
     // console.log(covidData)
     let oldIndex = []
     let countriesResult = covidData.filter((one, index) => {
