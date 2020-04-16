@@ -1,10 +1,10 @@
 window.onload = () => {
     var context = new AudioContext();
 
+    document.querySelector('.stores-list-container').style.display="none";
     const input = document.querySelector('#country-input');
     input.addEventListener('input', searchCountry);
 
-    document.querySelector('.stores-list-container').style.display="none";
 }
 
 var covidData;
