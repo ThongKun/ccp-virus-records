@@ -28,8 +28,11 @@ async function initMap() {
         center: vietnam,
         zoom: 5,
         mapTypeId: 'roadmap',
-        zoomControl: false,
         styles: customGoogleMapstyles,
+        streetViewControl: false,
+        zoomControl: false,
+        mapTypeControl: false,
+        fullscreenControl: false,
         gestureHandling : 'greedy'
     });
 
