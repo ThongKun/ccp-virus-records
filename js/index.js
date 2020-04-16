@@ -1,7 +1,3 @@
-HTMLElement.prototype.stopScroll = function(){
-    this.scroll({top:this.scrollTop+1});
-}
-
 window.onload = () => {
     var context = new AudioContext();
 
@@ -9,7 +5,6 @@ window.onload = () => {
     const input = document.querySelector('#country-input');
     input.addEventListener('input', searchCountry);
  
-    document.getElementByTagName('body')[0].stopScroll();
 }
 
 function noScroll() {
