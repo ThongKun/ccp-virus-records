@@ -434,5 +434,28 @@ body {
         padding-right: 5px;
         text-align: center;
     }
+}
 
+@media only screen and (min-width: 768px) and (max-width: 814px) {
+    .title {
+        left: 50px;
+    }
+    .search-container {
+        left: 50px;
+    }
+}
+
+@media only screen and (min-width: 380px) and (max-width:767px) {
+    .title {
+        left: 40px;
+        font-size: 45px;
+    }
+    .search-container {
+        left: 40px;
+        top: 115px;
+    }
+    .countrys-list-container {
+        top: 195px;
+        left: 40px;
+    }
 }
