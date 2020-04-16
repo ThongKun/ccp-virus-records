@@ -2,6 +2,7 @@ window.onload = () => {
     var context = new AudioContext();
 
     document.querySelector('.stores-list-container').style.display="none";
+    document.querySelector('.stores-list-container').style.webkitDisplay="none";
     const input = document.querySelector('#country-input');
     input.addEventListener('input', searchCountry);
 
