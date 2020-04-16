@@ -28,7 +28,9 @@ async function initMap() {
         center: vietnam,
         zoom: 5,
         mapTypeId: 'roadmap',
+        zoomControl: false,
         styles: customGoogleMapstyles,
+        gestureHandling : 'greedy'
     });
 
     google.maps.event.addListenerOnce(map, 'tilesloaded', function () {
