@@ -61,8 +61,17 @@ body {
     color: white;
 }
 
+.search-container input::placeholder {
+    /* color: rgb(242, 240, 240); */
+    transition: color 1s ease;
+}
+
 .search-container input:focus {
     outline: none;
+}
+
+.search-container input:focus::placeholder {
+    color: white;
 }
 
 .search i {
@@ -369,3 +378,33 @@ body {
     100% { transform: rotate(360deg); }
   }
 /* Spinner */
+
+
+/* Responsive for Mobile */
+@media only screen and ( max-width: 420px ) {
+    .title {
+        display: none;
+    }
+    .search-container {
+        max-width: 69vw;
+        max-height: 14vw;
+        top: 89vh;
+        left: 10vw;
+    }
+    .stores-list-container {
+        max-width: 70vw;
+        max-height: 30vh;
+        top: 54vh;
+        left: 11vw;
+    }
+    .misscellaneous {
+        position: absolute;
+        z-index: 100;
+        left: 69vw;
+        top: 4vw;
+        bottom: 0px;
+    }
+    .patreon a {
+        display: none;
+    }
+}

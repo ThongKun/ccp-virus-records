@@ -4,6 +4,7 @@ window.onload = () => {
     const input = document.querySelector('#country-input');
     input.addEventListener('input', searchCountry);
 
+    document.querySelector('.stores-list-container').style.display="none";
 }
 
 var covidData;
@@ -131,6 +132,8 @@ function createCovidMarker(latlng, lastUpdated, country, cases, deaths, recovere
 }
 
 function clickStore(index) {
+    document.getElementById("country-input").value = "";
+    document.querySelector('.stores-list-container').style.display="none";
     clickSound.play();
     var key = index.toString();
     let selectedMarker = markers.find(one => one.label.toLowerCase() === index.toLowerCase())
@@ -141,6 +144,11 @@ function clickStore(index) {
 
 function searchCountry() {
     let text = document.getElementById("country-input").value;
+    if (text) {
+        document.querySelector('.stores-list-container').style.display="flex";
+    } else {
+        document.querySelector('.stores-list-container').style.display="none";
+    }
     console.log('text: ' + text)
     console.log('search');
     // console.log(covidData)
