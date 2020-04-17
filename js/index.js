@@ -21,7 +21,7 @@ const clickSound = new Audio('sound/click.mp3');
 
 
 async function initMap() {
-    let res = await axios.get('https://corona.lmao.ninja/countries');
+    let res = await axios.get('https://corona.lmao.ninja/v2/countries');
     covidData = res.data;
     displayCcpVirusCountries(covidData);
     var myLatLng = { lat: 16.061941, lng: 108.219614 };
