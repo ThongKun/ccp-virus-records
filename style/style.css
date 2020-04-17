@@ -419,7 +419,7 @@ body {
         position: absolute;
         z-index: 100;
         left: 45vw;
-        bottom: 15px;
+        bottom: 3vw;
     }
     .patreon a {
         display: none;
