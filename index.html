@@ -85,23 +85,23 @@
             <font style="text-transform: lowercase; color: #DB7022">On</font> CCP Virus
         </h3>
     </a>
-    <!-- The Modal-->
-    <div id="modal-container" class="modal">
 
-        <!-- Laptop -->
+    <!-- The Modal-->
+    <!-- !SECTION -  Laptop Design -->
+    <div id="modal-container-laptop" class="modal">
         <!-- Modal content -->
-        <div class="modal-content-container laptop">
-            <div class="modal-item modal-origin-ccpvirus">
+        <div class="modal-content-container ">
+            <div class="modal-item modal-origin-ccpvirus laptop">
                 <div>
                     <h1 style="text-align: left;">Documents that tracks down Origin of the Virus</h1>
                     <div class="modal-link-container">
                         <ul>
                             <li>
-                                <a href="">The Epoch Time: The first documentary movie on CCP virus, Tracking Down the Origin of the Wuhan
-                                    Coronavirus</a>
+                                <a href="https://www.youtube.com/watch?v=3bXWGxhd7ic&" target="_blank">The Epoch Time: The first documentary movie on CCP virus, Tracking Down the Origin of the Wuhan
+                            Coronavirus</a>
                             </li>
                             <li>
-                                <a href="">Edge of Wonder: The series of Coronavirus</a>
+                                <a href="https://www.youtube.com/watch?v=CJEPryB74oU&list=PLfSbjV-exfm3V3c7rsp4p7cphguAc9mPp" target="_blank">Edge of Wonder: The series of Coronavirus</a>
                             </li>
                         </ul>
                         <br/>
@@ -113,54 +113,54 @@
             <div class="modal-item modal-youtube">
                 <h1>Youtube</h1>
                 <div class="modal-logo-container">
-                    <img src="/image/china-uncensored-logo.jpg" alt="" width="auto" height="100px">
-                    <img src="/image/america-uncovered.jpg" alt="" width="auto" height="100px">
-                    <img src="/image/ntdtv.jpg" alt="" width="auto" height="100px">
+                    <img class="china-uncensored-youtube" src="/image/china-uncensored-logo.jpg" alt="" width="auto" height="100px">
+                    <img class="america-uncovered-youtube" src="/image/america-uncovered.jpg" alt="" width="auto" height="100px">
+                    <img class="ntdtv-youtube" src="/image/ntdtv.jpg" alt="" width="auto" height="100px">
                 </div>
             </div>
             <div class="modal-item modal-website">
                 <h1>Newspapers and Websites</h1>
                 <div class="modal-logo-container">
-                    <img src="/image/theepochtime.png" alt="" width="auto" height="100px">
-                    <img src="/image/NTD.png" alt="" width="auto" height="100px">
-                    <img src="/image/john-hopkins.png" alt="" width="auto" height="100px">
+                    <img class="epochtime" src="/image/theepochtime.png" alt="" width="auto" height="100px">
+                    <img class="ntd" src="/image/NTD.png" alt="" width="auto" height="100px">
+                    <img class="john-hobkins" src="/image/john-hopkins.png" alt="" width="auto" height="100px">
                 </div>
-
             </div>
-            <span class="modal-item close">&times;</span>
+            <span class="modal-item close">x</span>
         </div>
-        <!-- Laptop -->
-        <!-- The Modal < 1083px -->
+    </div>
+    <!-- !SECTION - The Modal Mobile < 1083px -->
+    <div id="modal-container-mobile" class="modal">
+
         <div class="modal-content-container mobile">
             <span class="modal-item close">x</span>
             <div class="container-document">
                 <h1 style="text-align: left;">Documents that tracks down Origin of the Virus</h1>
                 <ul>
                     <li>
-                        <a href="">The Epoch Time: The first documentary movie on CCP virus, Tracking Down the Origin of the Wuhan
+                        <a href="https://www.youtube.com/watch?v=3bXWGxhd7ic&" target="_blank">The Epoch Time: The first documentary movie on CCP virus, Tracking Down the Origin of the Wuhan
                             Coronavirus</a>
                     </li>
                     <li>
-                        <a href="">Edge of Wonder: The series of Coronavirus</a>
+                        <a href="https://www.youtube.com/watch?v=CJEPryB74oU&list=PLfSbjV-exfm3V3c7rsp4p7cphguAc9mPp" target="_blank">Edge of Wonder: The series of Coronavirus</a>
                     </li>
                 </ul>
             </div>
             <div class="container-news">
                 <h1>Newspapers and Websites</h1>
-                <img src="/image/theepochtime.png" alt="" width="auto" height="100px">
-                <img src="/image/NTD.png" alt="" width="auto" height="100px">
-                <img src="/image/john-hopkins.png" alt="" width="auto" height="100px">
+                <img class="epochtime" src="/image/theepochtime.png" alt="" width="auto" height="100px">
+                <img class="ntd" src="/image/NTD.png" alt="" width="auto" height="100px">
+                <img class="john-hobkins" src="/image/john-hopkins.png" alt="" width="auto" height="100px">
             </div>
             <div class="container-youtube">
                 <h1>Youtube</h1>
-                <img src="/image/china-uncensored-logo.jpg" alt="" width="auto" height="100px">
-                <img src="/image/america-uncovered.jpg" alt="" width="auto" height="100px">
-                <img src="/image/ntdtv.jpg" alt="" width="auto" height="100px">
+                <img class="china-uncensored-youtube" src="/image/china-uncensored-logo.jpg" alt="" width="auto" height="100px">
+                <img class="america-uncovered-youtube" src="/image/america-uncovered.jpg" alt="" width="auto" height="100px">
+                <img class="ntdtv-youtube" src="/image/ntdtv.jpg" alt="" width="auto" height="100px">
             </div>
         </div>
-
     </div>
-
+    <!--  -->
     <div id="map"></div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLEW4S3JwYwrXkqQPc26o76hb7cRbO0Hs&callback=initMap">
     </script>
@@ -169,7 +169,7 @@
         audio.volume = 0.08;
     </script>
     <script src="js/modal.js"></script>
-
+    <script src="js/link-image.js"></script>
 </body>
 
 </html>
