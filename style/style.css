@@ -1,5 +1,21 @@
+@font-face {
+    font-family: palatino;
+    src: url(/font/Palatino.woff);
+}
+
+@font-face {
+    font-family: D-DIN-Condensed-Bold;
+    src: url(/font/D-DINCondensed-Bold.woff);
+}
+
+@font-face {
+    font-family: D-DIN-Condensed;
+    src: url(/font/D-DINCondensed.woff);
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: D-Din-Condensed;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -10,15 +26,17 @@ body {
 }
 
 #map {
-    width: 100%; height: 100%
+    width: 100%;
+    height: 100%
 }
 
 .title {
+    font-family: D-DIN-Condensed-Bold;
     position: absolute;
     z-index: 100;
     font-size: 52px;
     font-weight: bold;
-    color: rgb(54, 46, 50,0.5);
+    color: rgb(54, 46, 50, 0.5);
     transition: color 0.2s ease;
     text-transform: uppercase;
     top: 40px;
@@ -26,7 +44,7 @@ body {
 }
 
 .title:hover {
-    color: rgb(54, 46, 50,1);
+    color: rgb(54, 46, 50, 1);
 }
 
 .search-container {
@@ -41,6 +59,7 @@ body {
     border-radius: 44px;
     display: flex;
 }
+
 .search-container:hover {
     background-color: rgb(88, 78, 84, 1);
 }
@@ -54,6 +73,7 @@ body {
 }
 
 .search-container input {
+    font-family: D-DIN-Condensed;
     width: 100%;
     font-size: 25px;
     background-color: transparent;
@@ -77,13 +97,13 @@ body {
 .search i {
     font-size: 25px;
     color: white;
-} 
+}
 
 .countrys-list-container {
     width: 400px;
     position: absolute;
     z-index: 100;
-    background-color:rgba(255,255,255,0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     top: 220px;
     left: 80px;
     border-radius: 44px;
@@ -103,6 +123,7 @@ body {
 .countrys-list::-webkit-scrollbar {
     width: 0px;
 }
+
 .countrys-list:hover::-webkit-scrollbar {
     width: 12px;
 }
@@ -110,7 +131,7 @@ body {
 .country-container {
     padding-left: 20px;
     padding-right: 20px;
-    border-bottom:  1px solid #979797;
+    border-bottom: 1px solid #979797;
     display: flex;
     transition: 0.2s;
 }
@@ -119,8 +140,8 @@ body {
     background-color: rgb(170, 95, 47, 0.6);
     border-radius: 44px;
     cursor: pointer;
-
 }
+
 .country-container:hover .boundary {
     color: white !important;
 }
@@ -131,12 +152,12 @@ body {
 }
 
 .country-container .country-info-container {
-    flex-grow: 1;   
+    flex-grow: 1;
 }
 
 .country-container .country-name {
-    font-size: 20px;
-    margin-top: 30px;
+    font-size: 22px;
+    margin-top: 20px;
 }
 
 .country-container .boundary {
@@ -160,7 +181,7 @@ body {
     width: 33px;
     height: 33px;
     background-color: #B5ADAD;
-    color:white;
+    color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -231,7 +252,7 @@ body {
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
 .window-info-phone span {
@@ -240,26 +261,32 @@ body {
 
 
 /* Let's get this party started */
+
 ::-webkit-scrollbar {
     width: 12px;
 }
- 
+
+
 /* Track */
+
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
- 
+
+
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: rgba(255,0,0,0.8); 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    background: rgba(255, 0, 0, 0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
+
 ::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(255,0,0,0.4); 
+    background: rgba(255, 0, 0, 0.4);
 }
 
 .info-main-container {
@@ -296,7 +323,7 @@ body {
 }
 
 .info-death {
-    color : #A32F2E;
+    color: #A32F2E;
 }
 
 .search {
@@ -343,12 +370,13 @@ body {
 
 
 /* Spinner */
+
 .loader-container {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 999;
-    background:  rgb(255,255,255,0.6);
+    z-index: 998;
+    background: rgb(255, 255, 255, 0.6);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -358,17 +386,25 @@ body {
 .loader-container h1 {
     display: none;
     -webkit-animation: spin 2s linear infinite;
-    animation: showhide 1s 1s linear infinite alternate ;
+    animation: showhide 1s 1s linear infinite alternate;
+}
 
-}
 @-webkit-keyframes showhide {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-  
-  @keyframes showhide {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+
+@keyframes showhide {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .loader {
@@ -383,22 +419,33 @@ body {
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
     transition: display 0.5s ease-in-out
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 /* Spinner */
 
 
 /* Responsive for Mobile */
-@media only screen and ( max-width: 420px ) {
+
+@media only screen and ( max-width: 420px) {
     .title {
         display: none;
     }
@@ -414,7 +461,6 @@ body {
         top: 52vh;
         left: 14vw;
     }
-
     .misscellaneous {
         position: absolute;
         z-index: 100;
@@ -424,14 +470,16 @@ body {
     .patreon a {
         display: none;
     }
-
     .loader-container h1 {
         display: inline;
-        color: rgb(54, 46, 50,1);
+        color: rgb(54, 46, 50, 1);
         font-size: 47px;
         padding-left: 5px;
         padding-right: 5px;
         text-align: center;
+    }
+    .country-container .country-name {
+        font-size: 20px;
     }
 }
 
