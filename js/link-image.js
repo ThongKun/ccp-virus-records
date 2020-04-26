@@ -37,3 +37,8 @@ Array.from(document.getElementsByClassName('ntdtv-youtube')).forEach(child => {
         window.open("https://www.youtube.com/user/NTDTV/featured")
     })
 });
+Array.from(document.getElementsByTagName('a')).forEach(child => {
+    child.addEventListener('click', () => {
+        clickSound.play()
+    })
+});
