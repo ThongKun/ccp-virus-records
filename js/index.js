@@ -25,7 +25,7 @@ const clickSound = new Audio('sound/click.mp3');
 async function initMap() {
     let res = await axios.get('https://corona.lmao.ninja/v2/countries');
     covidData = res.data;
-    displayCcpVirusCountries(covidData);
+    // displayCcpVirusCountries(covidData);
     var myLatLng = { lat: 16.061941, lng: 108.219614 };
     var vietnamIndex = covidData.findIndex(one => one['country'] == 'Vietnam');
     // let vietnam = covidData[vietnamIndex]['country']['countryInfo'];
@@ -42,7 +42,7 @@ async function initMap() {
         gestureHandling: 'greedy'
     });
 
-    google.maps.event.addListenerOnce(map, 'tilesloaded', function () {
+    google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
         // do something only the first time the map is loaded
         document.querySelector(".loader-container").remove();
 
@@ -87,20 +87,20 @@ function displayCcpVirusCountries(countries) {
 function showCovidMarkers(newCovidData) {
     // var bounds = new google.maps.LatLngBounds();
     newCovidData.map((one, index) => {
-        var latlng = new google.maps.LatLng(
-            one['countryInfo']['lat'],
-            one['countryInfo']['long']);
-        let lastUpdated = new Date(one['updated']).toLocaleDateString("vn")
-        let country = one['country']
-        let cases = one['cases']
-        let deaths = one['deaths']
-        let recovered = one['recovered']
-        let id = one['countryInfo']['_id']
-        let iso2 = one['countryInfo']['iso2']
-        // bounds.extend(latlng);
-        createCovidMarker(latlng, lastUpdated, country, cases, deaths, recovered, id, iso2)
-    })
-    // map.fitBounds(bounds);
+            var latlng = new google.maps.LatLng(
+                one['countryInfo']['lat'],
+                one['countryInfo']['long']);
+            let lastUpdated = new Date(one['updated']).toLocaleDateString("vn")
+            let country = one['country']
+            let cases = one['cases']
+            let deaths = one['deaths']
+            let recovered = one['recovered']
+            let id = one['countryInfo']['_id']
+            let iso2 = one['countryInfo']['iso2']
+                // bounds.extend(latlng);
+            createCovidMarker(latlng, lastUpdated, country, cases, deaths, recovered, id, iso2)
+        })
+        // map.fitBounds(bounds);
 }
 
 function createCovidMarker(latlng, lastUpdated, country, cases, deaths, recovered, id, iso2) {
@@ -131,7 +131,7 @@ function createCovidMarker(latlng, lastUpdated, country, cases, deaths, recovere
         icon: 'image/corona.png',
         abc: 'ahihi'
     });
-    google.maps.event.addListener(marker, 'click', function () {
+    google.maps.event.addListener(marker, 'click', function() {
         infoWindow.setContent(html);
         infoWindow.open(map, marker);
         clickSound.play();
@@ -169,9 +169,8 @@ function searchCountry() {
     countriesResult.map((one, index) => {
         one['index'] = oldIndex[index];
     })
-    console.log(countriesResult);
     displayCcpVirusCountries(countriesResult)
-    // showCovidMarkers(countriesResult)
+        // showCovidMarkers(countriesResult)
 
 }
 

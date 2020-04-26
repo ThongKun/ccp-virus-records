@@ -7,6 +7,7 @@
     <meta property="og:image" content="image/ccpvirus-seo.jpg">
     <title>CCP VIRUS MAP RECORDS</title>
     <link rel="icon" href="image/ccpvirus-seo.jpg" type="image/icon type">
+    <script src="register-sw.js"></script>
     <script src="js/index.js"></script>
     <script src="js/google-map-style.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
@@ -28,6 +29,11 @@
         @import url('style/style.css');
         @import url('style/modal.css');
     </style>
+    <link rel="manifest" href="/manifest.json">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/image/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="theme-color" content="#FFE1C4" />
 </head>
 
 <body onclick="playSong()">
