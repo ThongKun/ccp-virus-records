@@ -1,4 +1,4 @@
-const STATIC_CACHE_STORE = 'static-cache-v22';
+const STATIC_CACHE_STORE = 'static-cache-v23';
 const DYNAMIC_CACHE_STORE = 'dynamic-cache';
 var urlsToCache = [
     '/',
