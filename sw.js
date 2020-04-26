@@ -21,6 +21,7 @@ var urlsToCache = [
 self.addEventListener('install', function(evt) {
     console.log('service worker has been installed')
     evt.waitUntil(
+        self.skipWaiting(),
         caches.open(STATIC_CACHE_STORE)
         .then(cache => {
             return cache.addAll(urlsToCache);
