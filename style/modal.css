@@ -45,7 +45,7 @@
 }
 
 .modal-item.modal-youtube {
-    align-self: flex-end;
+    /* align-self: center; */
 }
 
 .modal-item.modal-website {}
@@ -199,6 +199,11 @@ ul li {
 /* SECTION Responsive */
 
 @media only screen and (max-width: 1758px) {}
+@media only screen and (min-width: 1083px) and (max-width: 2442px) {
+    .modal-item.modal-youtube h1 {
+        padding-bottom: .3em;
+    }
+}
 
 @media only screen and (max-width: 1083px) {
     div.modal-content-container.mobile {
